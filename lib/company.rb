@@ -16,15 +16,23 @@ class Company
 
   def load_employees(file)
     CSV.foreach(file) do |line|
-      if line.length < 5
-        {success: false, errors: 'bad data'}
-      else line.length == 5
-        employees = CSV.readlines(file).map do |line|
-
-
+      return {success: false, errors: 'bad data'} if line.length < 5
+    end
   end
 
+  def load_projects(file)
+    CSV.foreach(file) do |line|
+      if line.length < 5
+        {success: false, errors: 'bad data'}
+      end
+    end
+  end
 
+  def load_timesheets(file)
+    CSV.foreach(file) do |line|
+      return {success: false, errors: 'bad data'} if line.length < 5
+    end
+  end
 
 
 
