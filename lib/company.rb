@@ -14,11 +14,21 @@ class Company
     @projects = []
   end
 
+  def load_csv(file)
+    data = CSV.open(filename, headers: false, header_converters: :symbol)
+    data.map do |line|
+      line
+    end
+  end
+
   def load_employees(file)
-    CSV.foreach(file) do |line|
+    employees = load_csv(file)
+      data.each do |line|
       return {success: false, errors: 'bad data'} if line.length < 5
     end
   end
+
+
 
   def load_projects(file)
     CSV.foreach(file) do |line|

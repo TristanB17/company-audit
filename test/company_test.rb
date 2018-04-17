@@ -17,9 +17,11 @@ class CompanyTest < Minitest::Test
     assert_equal [], @company.projects
   end
 
-  # def test_company_can_read_csv
-  #
-  # end
+  def test_company_can_read_csv
+    file = './data/employees.csv'
+    @company.load_employees(file)
+    assert_equal 1, @company.employees[0][0]
+  end
 
   def test_employee_good_data_returns_success
      expected = @company.load_employees('./data/employees.csv')
