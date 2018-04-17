@@ -26,6 +26,7 @@ class EmployeeTest < Minitest::Test
     @employee = Employee.new(employee_id, name, role, start_date, end_date)
 
     assert_equal 5, @employee.employee_id
+    assert_equal Integer, @employee.employee_id.class
     assert_equal 'Sally Jackson', @employee.name
     assert_equal 'Engineer', @employee.role
     assert_equal Time.parse(start_date), @employee.start_date
