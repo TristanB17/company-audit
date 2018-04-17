@@ -1,10 +1,31 @@
 require './test/test_helper'
 require './lib/employee'
+require 'time'
 
 class EmployeeTest < Minitest::Test
-  def test_instantiation
+
+  def setup
+    employee_id = '5'
+    name = 'Sally Jackson'
+    role = 'Engineer'
+    start_date = '2015-01-01'
+    end_date = '2018-01-01'
+    @employee = Employee.new(employee_id, name, role, start_date, end_date)
+  end
+
+  def test_employee_exists
+    assert_instance_of Employee, @employee
   end
 
   def test_attributes
+    assert_equal 5, @employee.employee_id
+    assert_equal Integer, @employee.employee_id.class
+    assert_equal 'Sally Jackson', @employee.name
+    assert_equal 'Engineer', @employee.role
+    assert_equal DateHandler.string_to_date(start_date), @employee.start_date
+    assert_equal DateHandler.string_to_date(end_date), @employee.end_date
   end
+
+
+
 end
