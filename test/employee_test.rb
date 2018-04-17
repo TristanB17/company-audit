@@ -11,6 +11,8 @@ class EmployeeTest < Minitest::Test
     end_date = '2018-01-01'
 
     employee = Employee.new(employee_id, name, role, start_date, end_date)
+    dh = DateHandler::DHDate(my_date)
+    
     assert_instance_of Employee, employee
     assert_equal 5, employee.employee_id
     assert_instance_of Date, employee.start_date

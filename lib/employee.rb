@@ -1,11 +1,11 @@
-require 'date'
-require './modules/date_handler_module'
+
 
 class Employee
-  include
+  include DateHandler
 
 
-  attr_reader   :employee_id,
+  attr_reader   :date_handler,
+                :employee_id,
                 :name,
                 :role,
                 :start_date,
