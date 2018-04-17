@@ -1,7 +1,6 @@
 
 
 class Employee
-  include DateHandler
 
 
   attr_reader   :date_handler,
