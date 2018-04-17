@@ -9,7 +9,17 @@ class Company
     @projects = []
   end
 
-  
+  def load_employees(file)
+    CSV.foreach(file) do |line|
+      if line.length < 5
+        {success: false, errors: 'bad data'}
+      else line.length == 5
+        employees = CSV.read(file).map do |line|
+          
+  end
+
+
+
 
 
 

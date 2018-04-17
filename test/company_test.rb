@@ -19,8 +19,7 @@ class TimesheetTest < Minitest::Test
 
   def test_loads_employees
      expected = @company.load_employees('./data/employees.csv')
-
-     assert_equal { success: true, errors: nil}, expected
+     assert_equal({ success: true, errors: nil}), expected
   end
 
 
