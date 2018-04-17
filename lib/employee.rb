@@ -2,9 +2,7 @@
 
 class Employee
 
-
-  attr_reader   :date_handler,
-                :employee_id,
+  attr_reader   :employee_id,
                 :name,
                 :role,
                 :start_date,
@@ -14,8 +12,8 @@ class Employee
     @employee_id = employee_id.to_i
     @name = name
     @role = role
-    @start_date = DHDate.new(start_date)
-    @end_date = DHDate.new(end_date)
+    @start_date = Time.parse(start_date)
+    @end_date = Time.parse(end_date)
   end
 
 
