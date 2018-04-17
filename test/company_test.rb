@@ -1,7 +1,7 @@
 require './test/test_helper'
 require './lib/company'
 
-class TimesheetTest < Minitest::Test
+class CompanyTest < Minitest::Test
 
   def setup
     @company = Company.new
@@ -16,6 +16,10 @@ class TimesheetTest < Minitest::Test
     assert_equal [], @company.timesheets
     assert_equal [], @company.projects
   end
+
+  # def test_company_can_read_csv
+  #
+  # end
 
   def test_employee_good_data_returns_success
      expected = @company.load_employees('./data/employees.csv')
