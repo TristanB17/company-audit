@@ -1,3 +1,8 @@
+require 'csv'
+require './lib/employee'
+require './lib/project'
+require './lib/timesheet'
+
 class Company
   attr_reader :employees,
               :timesheets,
@@ -14,8 +19,9 @@ class Company
       if line.length < 5
         {success: false, errors: 'bad data'}
       else line.length == 5
-        employees = CSV.read(file).map do |line|
-          
+        employees = CSV.readlines(file).map do |line|
+
+
   end
 
 
