@@ -12,8 +12,8 @@ class Employee
     @employee_id = employee_id.to_i
     @name = name
     @role = role
-    @start_date = Time.parse(start_date)
-    @end_date = Time.parse(end_date)
+    @start_date = DateHandler.string_to_date(start_date)
+    @end_date = DateHandler.string_to_date(end_date)
   end
 
 

@@ -29,8 +29,8 @@ class EmployeeTest < Minitest::Test
     assert_equal Integer, @employee.employee_id.class
     assert_equal 'Sally Jackson', @employee.name
     assert_equal 'Engineer', @employee.role
-    assert_equal Time.parse(start_date), @employee.start_date
-    assert_equal Time.parse(end_date), @employee.end_date
+    assert_equal DateHandler.string_to_date(start_date), @employee.start_date
+    assert_equal DateHandler.string_to_date(end_date), @employee.end_date
   end
 
 
