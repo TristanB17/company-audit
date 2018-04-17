@@ -16,7 +16,6 @@ class ProjectTest < Minitest::Test
   end
 
   def test_project_has_attributes
-
     assert_equal 123, @project.project_id
     assert_equal Integer, @project.project_id.class
     assert_equal 'Widget Maker', @project.name
